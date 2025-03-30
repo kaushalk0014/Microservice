@@ -21,4 +21,4 @@ POST: http://localhost:9292/payment/doPayment
     "paymentStatus":"success"
 }
 
-
+Eureka Service running on : http://localhost:8761/
