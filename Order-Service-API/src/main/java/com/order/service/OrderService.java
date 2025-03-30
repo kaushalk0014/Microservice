@@ -20,7 +20,7 @@ public class OrderService {
 	@Autowired
 	private RestTemplate restTemplate;
  
-	private static final String PAYMENT_URL="http://localhost:9292/payment/doPayment";
+	private static final String PAYMENT_URL="http://PAYMENT-SERVICE-API/payment/doPayment";
 
 	public TransactionResponse bookOrder(TransactionRequest transactionRequest) {
 		TransactionResponse transactionResponse=new TransactionResponse();
