@@ -22,3 +22,7 @@ POST: http://localhost:9292/payment/doPayment
 }
 
 Eureka Service running on : http://localhost:8761/
+
+API Geteway Healght:
+	http://localhost:8989/actuator/health
+	
