@@ -20,7 +20,7 @@ public class OrderService {
 	@Autowired
 	private RestTemplate restTemplate;
  
-	private static final String PAYMENT_URL="http://PAYMENT-SERVICE-API/payment/doPayment";
+	private static final String PAYMENT_URL="http://PAYMENT-SERVICE/payment/doPayment";
 
 	public TransactionResponse bookOrder(TransactionRequest transactionRequest) {
 		TransactionResponse transactionResponse=new TransactionResponse();
@@ -38,5 +38,10 @@ public class OrderService {
 		transactionResponse.setAmount(payment.getAmount());
 		transactionResponse.setOrder(order);
 		return transactionResponse;
+	}
+
+	public Order getByOrderId(Integer orderId) {
+		 
+		return orderRepositry.findById(orderId);
 	}
 }

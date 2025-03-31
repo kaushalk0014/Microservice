@@ -1,9 +1,21 @@
 
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    hostname: localhost
+
+
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: true
+    register-with-eureka: true   # Register this service with Eureka
+    fetch-registry: true         # Fetch registry information from Eureka
     service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    hostname: localhost
+    prefer-ip-address: true       # 🔥 Use IP instead of hostname (prevents hostname resolution issues)
+    hostname: localhost           # Explicitly defining hostname
+    instance-id: ${spring.application.name}:${server.port}  # Unique instance ID (useful for multiple instances)

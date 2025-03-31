@@ -9,4 +9,6 @@ import com.order.entiry.Order;
 @Repository // Optional but recommended
 @Primary
 public interface OrderRepositry extends JpaRepository<Order, Long> {
+
+	Order findById(Integer orderId);
 }
