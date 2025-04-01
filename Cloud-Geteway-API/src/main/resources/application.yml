@@ -53,15 +53,15 @@ server:
 spring:
   application:
     name: API-GATEWAY  # Ensure it matches the service name in Eureka
-  cloud:
-    gateway:
-      routes:
-        - id: ORDER-SERVICE
-          uri: lb://ORDER-SERVICE  # Load balance request to ORDER-SERVICE
-          predicates:
-            - Path=/order/**  # Matches requests to /order/**
-          filters:
-            - RewritePath=/order/(?<segment>.*), /${segment}  # Proper YAML syntax
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: ORDER-SERVICE
+#          uri: lb://ORDER-SERVICE  # Load balance request to ORDER-SERVICE
+#          predicates:
+#            - Path=/order/**  # Matches requests to /order/**
+#          filters:
+#            - RewritePath=/order/(?<segment>.*), /${segment}  # Proper YAML syntax
 
 eureka:
   client:
