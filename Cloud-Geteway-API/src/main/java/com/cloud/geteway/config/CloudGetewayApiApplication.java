@@ -24,7 +24,9 @@ public class CloudGetewayApiApplication {
 				// //static routing
 				.route("paymentId", r -> r.path("/payment/**")
 						.filters(f -> f.circuitBreaker(
-								config -> config.setName("paymetServiceCB").setFallbackUri("forward:/paymentFallback")))
+								config -> config.setName("paymetServiceCB")
+								.setFallbackUri("forward:/paymentFallback"))
+								)
 						.uri("lb://PAYMENT-SERVICE"))
 				.route("orderId", r -> r.path("/order/**")
 						.filters(f -> f.circuitBreaker(
